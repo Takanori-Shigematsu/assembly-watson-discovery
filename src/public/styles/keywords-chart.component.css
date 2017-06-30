@@ -1,0 +1,44 @@
+/* Keywords bar chart */
+.chart {
+    margin: 10px;
+    padding-top: 10px;
+}
+
+.chart .right {
+    stroke: white;
+    /*fill: indianred;*/
+}
+
+.right-positive {
+    fill: green;
+}
+
+.right-negative {
+    fill: indianred;
+}
+
+.right-neutral {
+    fill: beige;
+}
+
+
+.chart .left {
+    stroke: white;
+    fill: steelblue;
+}
+
+.chart rect:hover {
+    fill: #64707d;
+}
+
+.chart text {
+    fill: black;
+}
+
+.chart text.name {
+    fill: black;
+}
+
+.chart text.title {
+    fill: black;
+}

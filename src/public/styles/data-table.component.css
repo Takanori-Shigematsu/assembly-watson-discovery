@@ -1,0 +1,22 @@
+:host /deep/ .data-table-row {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+table.table.data-table {
+    table-layout: inherit;
+}
+
+td.data-column.column-name {
+    width: 75%;
+    text-align: left;
+}
+
+.data-table-header, .data-table-box, .pagination-box {
+    width: 80%;
+    font-size: 18px;
+    margin: auto;
+}

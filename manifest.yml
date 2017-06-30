@@ -1,0 +1,13 @@
+declared-services:
+  discovery-service:
+    label: discovery
+    plan: free
+applications:
+- services:
+   - my-discovery-service
+  name: nai-voc-discovery
+  command: npm start
+  path: .
+  memory: 2G
+  instances: 1
+  disk_quota: 2G

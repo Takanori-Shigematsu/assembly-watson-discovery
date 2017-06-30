@@ -1,0 +1,98 @@
+<div class="row margin-lr-sm margin-tb-sm">
+    <div id="" class="text-center">
+        <div *ngIf="reviews.length > 0">
+            <div style="text-align:left !important;">
+                <ul class="reviews-list list list-group">
+                    <li *ngFor="let review of (reviews | paginate: config); let i = index">
+                        <div class="panel panel-default no-padding">
+                            <div class="panel-heading" (click)="toggle(i)">
+                                <div class="pull-right" *ngIf="review.doc_sentiment.type == 'positive'">
+                                    <i class="fa fa-smile-o fa-2x green" aria-hidden="true"></i>
+                                    <span>{{review.doc_sentiment.score}}</span>
+                                </div>
+                                <div class="pull-right" *ngIf="review.doc_sentiment.type == 'negative'">
+                                    <i class="fa fa-frown-o fa-2x red" aria-hidden="true"></i>
+                                    <span>{{review.doc_sentiment.score}}</span>
+                                </div>
+                                <div class="pull-right" *ngIf="review.doc_sentiment.type == 'neutral'">
+                                    <i class="fa fa-meh-o fa-2x goldenrod" aria-hidden="true"></i>
+                                    <span>Neutral</span>
+                                </div>
+                                <h5>Product Name: </h5>
+                                <h4>{{review.product_name}}</h4>
+                                <h5>Review Text: </h5>
+                                <p>{{review.review_text}}</p>
+                                <h5>Doc Emotions: </h5>
+                                <div class="sprite-image row">
+                                    <figure class="col-sm-1 text-center">
+                                        <div class ="emotion-block" id="joy"></div>
+                                        <figcaption>Joy - {{review.doc_emotions.joy | number : '1.2-2'}}</figcaption>
+                                    </figure>
+                                    <figure class="col-sm-1 text-center">
+                                        <div class ="emotion-block" id="sadness"></div>
+                                        <figcaption>Sadness - {{review.doc_emotions.sadness | number : '1.2-2'}}</figcaption>
+                                    </figure>
+                                    <figure class="col-sm-1 text-center">
+                                        <div class ="emotion-block" id="anger"></div>
+                                        <figcaption>Anger - {{review.doc_emotions.anger | number : '1.2-2'}}</figcaption>
+                                    </figure>
+                                    <figure class="col-sm-1 text-center">
+                                        <div class ="emotion-block" id="disgust"></div>
+                                        <figcaption>Disgust - {{review.doc_emotions.disgust | number : '1.2-2'}}</figcaption>
+                                    </figure>
+                                    <figure class="col-sm-1 text-center">
+                                        <div class ="emotion-block" id="fear"></div>
+                                        <figcaption>Fear - {{review.doc_emotions.fear | number : '1.2-2'}}</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="panel-body" [ngClass]="{hide: !review.opened}">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Entity</th>
+                                        <th>Relevance</th>
+                                        <th>Type</th>
+                                        <th>Sentiment</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr *ngFor="let entity of review.entities">
+                                        <td>{{entity.text}}</td>
+                                        <td>{{entity.relevance | percent: "1.1-1"}}</td>
+                                        <td>{{entity.type}}</td>
+                                        <td>
+                                            <p *ngIf="entity.sentiment.type == 'positive'">
+                                                <i class="fa fa-smile-o fa-2x green" aria-hidden="true"></i>
+                                                <span>{{entity.sentiment.score}}</span>
+                                            </p>
+                                            <p *ngIf="entity.sentiment.type == 'negative'">
+                                                <i class="fa fa-frown-o fa-2x red" aria-hidden="true"></i>
+                                                <span>{{entity.sentiment.score}}</span>
+                                            </p>
+                                            <p *ngIf="entity.sentiment.type == 'neutral'">
+                                                <i class="fa fa-meh-o fa-2x goldenrod" aria-hidden="true"></i>
+                                                <span>Neutral</span>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+                <div class="">
+                    <pagination-controls [id]="config.id" [maxSize]="maxSize"
+                                         [directionLinks]="directionLinks"
+                                         [autoHide]="autoHide" (pageChange)="onPageChange($event);"
+                                         style="text-align:center;font-size:2em"></pagination-controls>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="reviews.length < 1">
+            <h1>There are no entities.</h1>
+        </div>
+    </div>
+</div>

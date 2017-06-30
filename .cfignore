@@ -1,0 +1,14 @@
+node_modules
+npm-debug.log
+coverage
+*DS_Store
+.classpath
+.project
+.idea
+.iml
+dist
+.tmp
+.env.example
+*.log
+config.json
+discovery-documents

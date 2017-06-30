@@ -1,0 +1,63 @@
+<div class="main-container">
+    <div class="text-center">
+        <div class="row col-centered">
+            <h1>Search for a Specific Product</h1>
+            <div class="form-group row top-30">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <input class="form-control" id="product" [(ngModel)]="form.product" name="product" (ngModelChange)="autoComplete($event)" (click)="autoComplete($event.target.value)" list="queryResults">
+                    <datalist id="queryResults"></datalist>
+                </div>
+            </div>
+            <div class="form-group row text-center">
+                <button type="button" class="btn btn-lg submit-btn text-center" (click)="searchProduct();">Find Product
+                </button>
+            </div>
+        </div>
+        <div class="row no-margin no-padding" *ngIf="showProductsOverview">
+            <div class="row col-centered"><h3>{{product}}</h3></div>
+            <div class="row no-margin no-padding top-60">
+                <div class="col-sm-6 no-padding">
+                    <div class="panel panel-default col-centered sub-container">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Sentiment Breakdown of Reviews</h3>
+                        </div>
+                        <div class="panel-body">
+                            <pie-chart [results]="pieChartResults"></pie-chart>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 no-margin no-padding">
+                    <div class="row no-margin no-padding">
+                        <div class="col-sm-12 panel panel-default col-centered sub-container no-margin no-padding">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Average Sentiment of Reviews</h3>
+                            </div>
+                            <div class="panel-body">
+                                <number-line [results]="averageSentiment"></number-line>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 panel panel-default col-centered sub-container no-margin no-padding">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Product Sentiment Over Time</h3>
+                            </div>
+                            <div class="panel-body">
+                                <product-sentiment-timeline [results]="sentimentTimeline" [ylabel]="'Sentiment'"></product-sentiment-timeline>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 panel panel-default col-centered sub-container no-margin no-padding">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Sentiment by Keywords</h3>
+                    </div>
+                    <div class="panel-body">
+                        <stacked-barchart [results]="sentimentByKeywordResults"></stacked-barchart>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row col-centered" *ngIf="noResults">There is no product by that name. Please search again.</div>
+    </div>
+</div>

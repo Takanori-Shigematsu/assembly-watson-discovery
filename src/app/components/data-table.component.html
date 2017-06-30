@@ -1,0 +1,19 @@
+<div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
+    <data-table id="product-grid"
+                headerTitle=""
+                [items]="items"
+                [itemCount]="itemCount"
+                (reload)="reloadItems($event)">
+        <data-table-column
+                [property]="'name'"
+                [header]="'Product Name'"
+                [sortable]="true"
+                [resizable]="true">
+        </data-table-column>
+        <data-table-column
+                [property]="'count'"
+                [header]="'Review Count'"
+                [sortable]="true">
+        </data-table-column>
+    </data-table>
+</div>

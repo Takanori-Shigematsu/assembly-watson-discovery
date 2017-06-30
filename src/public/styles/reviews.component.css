@@ -1,0 +1,8 @@
+.reviews-list {
+    list-style: none;
+    cursor: pointer;
+}
+
+#relations-list li {
+    cursor: default !important;
+}

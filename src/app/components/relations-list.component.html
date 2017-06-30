@@ -1,0 +1,89 @@
+<div class="row margin-lr-sm">
+    <div id="relations" class="text-center">
+        <div *ngIf="relations.length > 0">
+            <div style="text-align:left !important;">
+                <ul class="reviews-list list list-group">
+                    <li *ngFor="let review of (relations | paginate: config); let i = index">
+                        <div class="panel panel-default no-padding">
+                            <div class="panel-heading" (click)="toggle(i)">
+                                <div class="pull-right" *ngIf="review.doc_sentiment.type == 'positive'">
+                                    <i class="fa fa-smile-o fa-2x green" aria-hidden="true"></i>
+                                    <span>{{review.doc_sentiment.score}}</span>
+                                </div>
+                                <div class="pull-right" *ngIf="review.doc_sentiment.type == 'negative'">
+                                    <i class="fa fa-frown-o fa-2x red" aria-hidden="true"></i>
+                                    <span>{{review.doc_sentiment.score}}</span>
+                                </div>
+                                <div class="pull-right" *ngIf="review.doc_sentiment.type == 'neutral'">
+                                    <i class="fa fa-meh-o fa-2x goldenrod" aria-hidden="true"></i>
+                                    <span>Neutral</span>
+                                </div>
+                                <h5>Product Name: </h5>
+                                <h4>{{review.product_name}}</h4>
+                                <h5>Review Text: </h5>
+                                <p>{{review.review_text}}</p>
+                                <h5>Doc Emotions: </h5>
+                                <div class="sprite-image row">
+                                    <figure class="col-sm-1 text-center">
+                                        <div class ="emotion-block" id="joy"></div>
+                                        <figcaption>Joy - {{review.doc_emotions.joy | number : '1.2-2'}}</figcaption>
+                                    </figure>
+                                    <figure class="col-sm-1 text-center">
+                                        <div class ="emotion-block" id="sadness"></div>
+                                        <figcaption>Sadness - {{review.doc_emotions.sadness | number : '1.2-2'}}</figcaption>
+                                    </figure>
+                                    <figure class="col-sm-1 text-center">
+                                        <div class ="emotion-block" id="anger"></div>
+                                        <figcaption>Anger - {{review.doc_emotions.anger | number : '1.2-2'}}</figcaption>
+                                    </figure>
+                                    <figure class="col-sm-1 text-center">
+                                        <div class ="emotion-block" id="disgust"></div>
+                                        <figcaption>Disgust - {{review.doc_emotions.disgust | number : '1.2-2'}}</figcaption>
+                                    </figure>
+                                    <figure class="col-sm-1 text-center">
+                                        <div class ="emotion-block" id="fear"></div>
+                                        <figcaption>Fear - {{review.doc_emotions.fear | number : '1.2-2'}}</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="panel-body" [ngClass]="{hide: !review.opened}">
+                            <div class="text-center"><i>The Watson Discovery Service returns back all the relations per sentence it can find in the review. If you hover over one of the underlined words, it will show the sentiment if one is returned.</i></div>
+                                <div class="row text-center margin-tb-sm">
+                                    <div class="col-sm-3">
+                                        <span class="fa fa-circle fa-2x goldenrod" aria-hidden="true"></span>
+                                        <span>Subject</span></div>
+                                    <div class="col-sm-3">
+                                        <span class="fa fa-circle fa-2x crimsom" aria-hidden="true"></span>
+                                        <span>Action</span>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <span class="fa fa-circle fa-2x darkblue" aria-hidden="true"></span>
+                                        <span>Object</span>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <span class="fa fa-circle fa-2x darkviolet" aria-hidden="true"></span>
+                                        <span>Location</span>
+                                    </div>
+                                </div>
+                                <ul id="relations-list" class="list-group">
+                                    <li class="list-group-item" *ngFor="let sentence of review.relations"
+                                        [innerHTML]="sentence"></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+                <div class="">
+                    <pagination-controls [id]="config.id" [maxSize]="maxSize"
+                                         [directionLinks]="directionLinks"
+                                         [autoHide]="autoHide" (pageChange)="onPageChange($event);"
+                                         style="text-align:center;font-size:2em"></pagination-controls>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="relations.length < 1">
+            <h1>There are no relations.</h1>
+        </div>
+    </div>
+</div>

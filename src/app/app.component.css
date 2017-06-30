@@ -1,0 +1,56 @@
+.header-tab {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 9rem;
+    font-size: 1.5em;
+    color: black;
+}
+
+.header-tab:not(:last-child) {
+    border-right: 2px solid black;
+}
+
+.header-tab-option {
+    cursor: pointer;
+}
+
+.header-tab-selected {
+    /*font-size: 1.75rem;*/
+    color: purple;
+}
+.header-tab-selected .pdf-header-tab-option {
+    color: purple;
+}
+
+a, a:visited {
+    color: #333;
+}
+
+/*Side bar*/
+html, body, md-sidenav-layout, .side-nav {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.side-nav {
+    width: 300px;
+    background-color: gainsboro;
+}
+
+.side-nav md-sidenav {
+    max-width: 500px;
+}
+
+.side-nav .md-sidenav-content,
+.side-nav md-sidenav {
+    display: flex;
+}
+
+/*.side-nav {*/
+    /*overflow: auto;*/
+/*}*/
+
+.sub-container {
+    width: 90%;
+    background-color: gainsboro;
+}

@@ -1,0 +1,13 @@
+<main>
+    <div #watsonOverlay id="watson-overlay" class="overlay hide">
+        <div id="watson-thinking" class="loading"></div>
+    </div>
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav lower-navbar">
+            <li><a class="navbar-brand" routerLink="/home" routerLinkActive="active">Review Overview</a></li>
+            <li><a class="navbar-brand" routerLink="/enrichment-visualizer" routerLinkActive="active">Enrichment Visualizer</a></li>
+            <li><a class="navbar-brand" routerLink="/product-search" routerLinkActive="active">Product Search</a></li>
+        </ul>
+    </nav>
+    <router-outlet></router-outlet>
+</main>

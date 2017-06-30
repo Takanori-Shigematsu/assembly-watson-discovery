@@ -1,0 +1,52 @@
+<div class="main-container">
+    <query-form (resultChange)="onReceiveResult($event);"></query-form>
+    <div class="center-block sub-container" *ngIf="results != null && results.length > 0">
+        <div class="row no-margin">
+            <div class="panel-heading whitesmoke-bg col-sm-3 header-tab text-center" id="relations-tab" (click)="showRelations()"
+                 [ngClass]="{'header-tab-selected': selected == relations}">
+                <div class="header-tab-option">
+                    Relations
+                </div>
+            </div>
+            <div class="panel-heading whitesmoke-bg col-sm-3 header-tab" id="concepts-tab" (click)="showConcepts()"
+                 [ngClass]="{'header-tab-selected': selected == concepts}">
+                <div class="header-tab-option">
+                    Concepts
+                </div>
+            </div>
+            <div class="panel-heading whitesmoke-bg col-sm-3 header-tab" id="entities-tab" (click)="showEntities()"
+                 [ngClass]="{'header-tab-selected': selected == entities}">
+                <div class="header-tab-option">
+                    Entities
+                </div>
+            </div>
+            <div class="panel-heading whitesmoke-bg col-sm-3 header-tab" id="keywords-tab" (click)="showKeywords()"
+                 [ngClass]="{'header-tab-selected': selected == keywords}">
+                <div class="header-tab-option">
+                    Keywords
+                </div>
+            </div>
+        </div>
+        <i class="fa fa-download fa-3x fa-border" (click)="downloadAsCSV()"></i>
+        <div class="">
+            <section class="">
+                <div [hidden]="selected != relations" class="margin-tb-sm">
+                    <relations-list [data]="results"></relations-list>
+                </div>
+                <div [hidden]="selected != concepts" class="">
+                    <concepts-table [data]="results"></concepts-table>
+                </div>
+                <div [hidden]="selected != entities" class="">
+                    <entities-table [data]="results"></entities-table>
+                </div>
+                <div [hidden]="selected != keywords" class="">
+                    <keywords-table [data]="results"></keywords-table>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="text-center row" *ngIf="results !== null && results.length < 1">
+        <h1>There are no matching results.</h1>
+    </div>
+</div>
+

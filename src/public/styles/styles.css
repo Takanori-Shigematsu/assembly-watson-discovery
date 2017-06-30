@@ -1,0 +1,394 @@
+/* style.css
+ * This file provides css styles.
+ */
+
+@media (min-width: 768px) {
+    .main-container {
+        width: 100%;
+    }
+}
+
+/*@media (min-width: 992px) {*/
+/*.container {*/
+/*width: 600px;*/
+/*}*/
+/*}*/
+
+
+body, html {
+    background-color: #bfbdc0 !important;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    /*#color: #ffffff;*/
+}
+
+body {
+    #text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #00aed1;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: black;
+
+}
+
+pre {
+    padding: 0;
+    margin: 0;
+}
+
+.btn:focus, .upload-btn:focus {
+    outline: 0 !important;
+}
+
+.submit-btn {
+    color: #ffffff;
+    background-color: #F89406;
+    border: none;
+}
+
+.submit-btn:hover,
+.submit-btn:focus,
+.submit-btn:active,
+.submit-btn.active {
+    color: #ffffff;
+    background-color: #FA8900;
+    border: none;
+}
+
+/*.panel {*/
+    /*padding-top: 20px;*/
+    /*padding-bottom: 20px;*/
+/*}*/
+
+/** Positioning **/
+.col-centered {
+    float: none;
+    margin: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+.top-30 {
+    margin-top: 30px;
+}
+
+.top-60 {
+    margin-top: 60px;
+}
+
+
+.top-80 {
+    margin-top: 80px;
+}
+
+.margin-left-10 {
+    margin-left:10px !important;
+}
+
+.margin-left-20 {
+    margin-left:20px !important;
+}
+
+.margin-tb-sm {
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+.margin-lr-sm {
+    margin-left: 20px;
+    margin-right: 20px
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+/** Font Sizes **/
+.font-md {
+    font-size: 1em;
+}
+
+/** Font Colors **/
+.blue {
+    color: #00aed1;
+}
+
+.goldenrod {
+    color: goldenrod;
+}
+
+.crimsom {
+    color: crimson;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.darkblue {
+    color: darkblue;
+}
+
+.darkviolet {
+    color: darkviolet;
+}
+
+/** Background Colors **/
+.lightblue-bg {
+    background-color: lightblue;
+}
+
+.aliceblue-bg {
+    background-color: aliceblue;
+}
+
+.whitesmoke-bg {
+    background-color: whitesmoke;
+}
+
+.gainsboro-bg {
+    background-color: gainsboro;
+}
+
+
+/** Watson Loading Overlay **/
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, .9);
+    top: 0;
+    z-index: 10;
+}
+
+.loading {
+    background-image: url("../images/watson_black_animate.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+}
+
+/** Components **/
+.panel-heading {
+    cursor: pointer;
+}
+
+/* popover */
+.popover {
+    z-index: 1010 !important;
+}
+
+/* pagination */
+.ng2-pagination li {
+    font-size: 1em !important;
+    color: black !important;
+}
+
+
+/* css sprites */
+
+.emotion-block {
+    height: 40px;
+    width: 40px;
+    margin-left: 25px;
+    border-radius: 10px;
+}
+
+#joy {
+    background: #ffff00;
+}
+
+#sadness {
+    background: #6f6fff;
+}
+
+#anger {
+    background: #cc0000;
+}
+
+#fear {
+    background: #9975b6;
+}
+
+
+#disgust {
+    background: #658E65;
+}
+
+.panel-body {
+    cursor: default;
+}
+
+.popover {
+    max-width: 100%;
+}
+
+.pagination-next.disabled, .pagination-previous.disabled {
+    display: none !important;
+}
+
+/* Header Styles */
+
+
+@media (min-width: 768px) {
+    ._demo--container {
+    width: 760px;
+    margin: 0rem auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    ._demo--container {
+    width: 992px;
+    margin: 0rem auto;
+    }
+}
+
+._demo--heading {
+    background-color: #404041;
+    margin-top: 0;
+    padding-bottom: 1rem;
+    min-height: 78px;
+    position: relative;
+    z-index: 1000;
+}
+@media (min-width: 700px) {
+    ._demo--heading {
+    padding: 0;
+    }
+}
+
+._demo--banner {
+    margin-top: 0;
+    background-color: #f4f4f4;
+    border-bottom: 2px solid #ececec;
+}
+
+.wordmark {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    font-size: 1.062em;
+    text-decoration: none;
+}
+a.wordmark:hover {
+    text-decoration: none;
+}
+.wordmark--left {
+    color: #fdfdfd;
+    font-weight: 300;
+    vertical-align: middle;
+    display: inline-block;
+    width: 5rem;
+    text-align: center;
+    margin-top: -0.55rem;
+}
+.wordmark--right {
+    color: #ffffff;
+    font-weight: 500;
+    vertical-align: bottom;
+    font-size: 20px;
+    text-decoration: none;
+}
+span.wordmark--right:hover {
+    color: #00b39f;
+}
+.wordmark--icon {
+    top: 9px;
+    margin: 0 0rem -10px 0;
+    width: 100%;
+    height: auto;
+}
+@media (min-width: 700px) {
+    .wordmark {
+        margin-bottom: 1.5rem;
+        margin-left: 3rem;
+        float: left;
+    }
+}
+
+.heading-nav {
+    margin-right: 0.5rem;
+    margin-top: 0;
+}
+@media (min-width: 700px) {
+    .heading-nav {
+        float: right;
+        margin-right: 3rem;
+    }
+}
+.heading-nav--li {
+    display: block;
+    margin-top: 1rem;
+    font-size: 16px;
+}
+.heading-nav--li:hover {
+    text-decoration: none;
+}
+@media (min-width: 700px) {
+    .heading-nav--li {
+        margin-top: 0rem;
+        display: inline-block;
+    }
+}
+.heading-nav--item {
+    color: #c7c7c7;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 300;
+    padding-left: 0.75em;
+    border-left: 0.25em solid transparent;
+}
+.heading-nav--item:focus, .heading-nav--item:hover {
+    border-left-color: purple;
+    color: #ffffff;
+}
+@media (min-width: 700px) {
+    .heading-nav--item {
+        margin-top: 3.5rem;
+        padding-bottom: 1.5rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        border-left: 0;
+        border-bottom: 0.25em solid transparent;
+    }
+    .heading-nav--item:focus, .heading-nav--item:hover {
+        border-left: 0;
+        border-bottom-color: purple;
+        text-decoration: none;
+    }
+    .lower-navbar {
+        margin-left: 33%;
+    }
+}
