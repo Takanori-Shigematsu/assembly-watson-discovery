@@ -1,4 +1,9 @@
-# Voice of the Customer Discovery [![Build Status](https://travis.ibm.com/watson-developer-cloud/voc-discovery.svg?token=p1iBXWqKFC4fGyYjjz9R&branch=master)](https://travis.ibm.com/watson-developer-cloud/voc-discovery)
+# Watson Discovery Workshop 
+
+Slides at https://ibm.box.com/v/assembly-watson-discovery
+
+
+# Voice of the Customer [![Build Status](https://travis.ibm.com/watson-developer-cloud/voc-discovery.svg?token=p1iBXWqKFC4fGyYjjz9R&branch=master)](https://travis.ibm.com/watson-developer-cloud/voc-discovery)
 
 This is a Starter Kit (SK), which is designed to get you up and running quickly with a common industry pattern, and to provide information and best practices around Watson services. This application was created to demonstrate how the services can be used to detect sentiment and customer's satisfaction based on different product reviews. This demo for this SK uses reviews of home and kitchen products on Amazon.
 
